@@ -6,6 +6,9 @@ class Contacts(models.Model):
     skype = models.CharField(max_length=50)
     other = models.TextField()
 
+    def __unicode__(self):
+        return self.email
+
 class Bio(models.Model):
     name = models.CharField(max_length=50)
     surname = models.CharField(max_length=50)

@@ -6,7 +6,7 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
     # Examples:
-    # url(r'^$', 'jenvy_test.views.home', name='home'),
+    url(r'^$', 'contacts.views.view_contact', name='contacts'),
     # url(r'^jenvy_test/', include('jenvy_test.foo.urls')),
 
     # Uncomment the admin/doc line below to enable admin documentation:
