@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+{% if bio_list %}
+    <ul>
+        {% for bio in bio_list %}
+            <li>{{ bio.name }} {{ bio.surname }}</li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>No polls are available.</p>
+{% endif %}
+</body>
+</html>

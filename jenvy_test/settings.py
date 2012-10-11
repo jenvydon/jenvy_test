@@ -106,7 +106,7 @@ ROOT_URLCONF = 'jenvy_test.urls'
 WSGI_APPLICATION = 'jenvy_test.wsgi.application'
 
 TEMPLATE_DIRS = (
-#'/mnt/data/django/jenvy_test/templates',
+    'templates',
 )
 
 INSTALLED_APPS = (
