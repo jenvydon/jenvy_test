@@ -1,6 +1,6 @@
 MANAGE=django-admin.py
 
-tests:
+test:
     PYTHONPATH=`pwd` DJANGO_SETTINGS_MODULE=jenvy_test.settings $(MANAGE) test contacts
 
 run:
