@@ -6,11 +6,19 @@ Replace this with more appropriate tests for your application.
 """
 
 from django.test import TestCase
+from django.test import LiveServerTestCase
+from selenium import webdriver
 
+class ContactsTest(LiveServerTestCase):
 
-class SimpleTest(TestCase):
-    def test_basic_addition(self):
-        """
-        Tests that 1 + 1 always equals 2.
-        """
-        self.assertEqual(1 + 1, 2)
+    def setUp(self):
+        self.browser = webdriver.Chrome()
+        self.browser.implicitly_wait(3)
+
+    def tearDown(self):
+        self.browser.quit()
+
+    def test_can_create_new_poll_via_admin_site(self):
+        self.browser.get(self.live_server_url)
+        body = self.browser.find_element_by_tag_name('body')
+        self.assertIn('Contacts', body.text)
