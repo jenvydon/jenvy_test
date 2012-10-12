@@ -1,0 +1,1 @@
+[{"pk": 1, "model": "contacts.contacts", "fields": {"jid": "jenvy.don@gmail.com", "other": "Apple, apple, apple, apple", "email": "jenvy.don@gmail.com", "skype": "jenvydon"}}, {"pk": 1, "model": "contacts.bio", "fields": {"about": "Apple, apple, apple, apple, apple, apple, apple.", "date_of_birth": "2012-10-12", "surname": "Fr", "name": "Vlad", "contacts": 1}}]

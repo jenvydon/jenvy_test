@@ -1,17 +1,25 @@
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
-<head>
-    <title></title>
-</head>
+<head><title>{% block title %}Test ticket #1{% endblock %}</title></head>
 <body>
-{% if bio_list %}
-    <ul>
-        {% for bio in bio_list %}
-            <li>{{ bio.name }} {{ bio.surname }}</li>
-        {% endfor %}
-    </ul>
-{% else %}
-    <p>No polls are available.</p>
-{% endif %}
-</body>
+{% block body %}
+    {% block content %}
+    {% for bio in bio_list %}
+        <div style="float:left;">
+            <p><b>Name:</b> {{ bio.name }}</p>
+            <p><b>Last name:</b> {{ bio.surname }}</p>
+            <p><b>Date of birth:</b> {{ bio.date_of_birth }}</p>
+            <p><b>Bio:</b> {{ bio.about }}</p>
+        </div>
+        <div style="float:left; ">
+            <b>Contacts</b>
+            <p><b>Email:</b> {{ bio.contacts.email }}</p>
+            <p><b>Jabber:</b> {{ bio.contacts.jid }}</p>
+            <p><b>Skype:</b> {{ bio.contacts.skype }}</p>
+            <p><b>Other contacts:</b> {{ bio.contacts.other }}</p>
+        </div>
+    {%  endfor %}
+    {% endblock content %}
+{% endblock body %}</body>
 </html>
